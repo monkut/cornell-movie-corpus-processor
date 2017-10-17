@@ -16,6 +16,9 @@ This cleanup defines a single class, `CornellMovieCorpusProcessor` to process th
 If you want to use the class directly you can do so like this:
 
 ```
+from process import CornellMovieCorpusProcessor
+
+
 processor = CornellMovieCorpusProcessor(movie_lines_filepath,
                                         movie_conversations_filepath)
 id2lines = processor.get_id2line()
