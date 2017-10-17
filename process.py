@@ -120,7 +120,7 @@ class CornellMovieCorpusProcessor:
 if __name__ == '__main__':
     import argparse
     parser = argparse.ArgumentParser(description=__doc__)
-    DEFAULT_OUTPUT_DIRECTORY = os.path.join(os.getcwd(), 'working_directory')
+    DEFAULT_OUTPUT_DIRECTORY = os.getcwd()
     parser.add_argument('-l', '--lines',
                         default='movie_lines.txt',
                         help='Path to Cornell Corpus, "movie_lines.txt"')
@@ -146,6 +146,6 @@ if __name__ == '__main__':
     questions, answers = processor.get_question_answer_set(id2lines, conversations)
     print('Outputting train/test enc/dec files for tensorflow chatbot...')
     result_filepaths = processor.prepare_seq2seq_files(questions, answers, args.output_directory)
-    print('¥n'.join(result_filepaths))
+    print('\n'.join(result_filepaths))
 
 
